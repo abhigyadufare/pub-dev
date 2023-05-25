@@ -42,4 +42,4 @@ RUN /project/tool/setup-flutter.sh /tool/preview 3.11.0-0.0.pre
 
 # Clear out any arguments the base images might have set
 CMD []
-ENTRYPOINT /usr/lib/dart/bin/dart bin/server.dart "$GAE_SERVICE"
+ENTRYPOINT /usr/lib/dart/bin/dart --observe bin/server.dart "$GAE_SERVICE"

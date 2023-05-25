@@ -37,7 +37,7 @@ class SearchCommand extends Command {
     await startIsolates(
       logger: _logger,
       frontendEntryPoint: _main,
-      frontendCount: envConfig.isRunningInAppengine ? 2 : 1,
+      frontendCount: 1, //envConfig.isRunningInAppengine ? 2 : 1,
       workerCount: 0,
     );
   }
@@ -67,7 +67,7 @@ Future _main(FrontendEntryMessage message) async {
       rethrow;
     }
 
-    indexUpdater.runScheduler(manualTriggerTasks: taskReceivePort.cast<Task>());
+    //indexUpdater.runScheduler(manualTriggerTasks: taskReceivePort.cast<Task>());
   });
 
   await runHandler(_logger, searchServiceHandler);
