@@ -33,7 +33,7 @@ WORKDIR /project/app
 RUN dart /project/tool/pub_get_offline.dart /project/app
 
 # Setup analysis Dart SDKs
-RUN app/lib/shared/analysis_sdk_versions.dart app | bash
+RUN dart app/lib/shared/analysis_sdk_versions.dart app | bash
 
 RUN /project/tool/setup-webp.sh /usr/local/bin
 

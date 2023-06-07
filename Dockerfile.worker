@@ -18,7 +18,7 @@ COPY --chown=worker:worker . /home/worker/pub-dev
 WORKDIR /home/worker/pub-dev
 
 # Setup analysis Dart SDKs
-RUN app/lib/shared/analysis_sdk_versions.dart worker | bash
+RUN dart app/lib/shared/analysis_sdk_versions.dart worker | bash
 
 RUN tool/setup-webp.sh /home/worker/bin
 
